@@ -1,53 +1,51 @@
-require('dotenv').config();
+const dotenv = require('dotenv');
 const express = require('express');
-const ejs = require('ejs');
 const mongoose = require('mongoose');
 const studentRoutes = require('./routes/studentRoutes');
+const authRoutes = require('./routes/authRoutes');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
 // ---------- config ----------
+const port = process.env.PORT || 3000;
+dotenv.config();
 app.set('view engine', 'ejs');
 
 // ---------- database ----------
 mongoose
-  .connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then((result) => {
-    app.listen(3002);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-
-students = [{
-    firstName:"Namal",
-    lastName:'Malinga',
-    email:"th@rt0",
-    phone:'11200212'
-}
-]
+	// eslint-disable-next-line no-undef
+	.connect(process.env.MONGODB_URI, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		useFindAndModify: false,
+		useCreateIndex: true,
+		autoIndex: true,
+	})
+	.then((res) => app.listen(port))
+	.catch((err) => {
+		console.log(err);
+	});
 
 // ---------- top m/ws ----------
 app.use(express.static('public'));
-
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cookieParser());
 
 // ---------- routes ----------
-app.use(studentRoutes)
-
-
+app.use('/dashboard/students', studentRoutes);
+app.use('/dashboard', authRoutes);
 
 // ---------- redirects ----------
 app.get('/', (req, res) => {
-    res.redirect('/dashboard/students');
-  });
-
+	res.redirect('/dashboard/students');
+});
 
 // ---------- bottom m/ws ----------
+// ---------- error handling ----------
 
-
-// ---------- config ----------
-// ---------- config ----------
-// ---------- config ----------
+app.use((req, res) => {
+	// res.status(401).json({ errors: { message: 'Page not found!' } });
+	res.render('404');
+});

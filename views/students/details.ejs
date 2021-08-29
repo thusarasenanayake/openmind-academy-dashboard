@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="author" content="Thusara Senanayake">
+
+	<title>Dashboard - Students</title>
+	<link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="/assets/css/dashboard.css" rel="stylesheet" />
+
+	<script defer src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+	<script defer src="/assets/dist/js/feather.min.js"></script>
+	<script defer src="/assets/js/details.js"></script>
+</head>
+
+<body>
+	<%- include ('../partials/header.ejs') %>
+	<div class="container-fluid">
+		<div class="row">
+			<%- include('../partials/sidebar.ejs') %>
+			<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+				<span id="homeIcon" data-feather="corner-down-left" onclick="window.history.back()"></span>
+
+				<div class="p-4 row justify-content-center" id="details">
+
+					<div class="col-sm-8">
+						<h1 class="display-6">
+							<%= student.firstName +' '+student.lastName %>
+						</h1>
+					</div>
+
+					<div class="col-sm-8 mt-4">
+						<div class="input-group mb-3">
+							<span class="input-group-text">Index Number</span>
+							<span id="indexNumberIG" class="input-group-text">OMA-</span>
+							<input type="text" class="form-control"
+								value="<%= student.indexNumber.toString().padStart(5,0) %> " disabled />
+							<span class="input-group-text btn btn-outline-primary"
+								onclick="navigator.clipboard.writeText(document.querySelector('#indexNumberIG + input').value)"><span
+									data-feather="copy"></span></span>
+
+						</div>
+					</div>
+					<div class="col-sm-8 mt-4">
+						<div class="input-group mb-3">
+							<span class="input-group-text ">Email</span>
+							<input type="text" class="form-control cursor-pointer" value="<%= student.email %>"
+								onclick="window.location.href ='mailto://<%= student.email %>'" readonly />
+							<span class="input-group-text btn btn-outline-primary"
+								onclick="navigator.clipboard.writeText('<%= student.email %>')">
+								<span data-feather="copy"></span>
+							</span>
+						</div>
+					</div>
+					<div class="col-sm-8 mt-4">
+						<div class="input-group mb-3">
+							<span class="input-group-text">Phone number</span>
+							<input type="text" class="form-control" value="<%= student.phoneNumber %> " disabled />
+							<span class="input-group-text btn btn-outline-primary"
+								onclick="navigator.clipboard.writeText('<%= student.phoneNumber %>')"><span
+									data-feather="copy"></span></span>
+						</div>
+					</div>
+					<div class="col-sm-8 mt-4">
+						<div class="input-group mb-3">
+							<span class="input-group-text">Course</span>
+							<input type="text" class="form-control" value="<%= student.courseId %> " disabled />
+							<span class="input-group-text btn btn-outline-primary"
+								onclick="navigator.clipboard.writeText('<%= student.courseId %>')"><span
+									data-feather="copy"></span></span>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+</body>
+
+</html>

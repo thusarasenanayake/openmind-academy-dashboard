@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="author" content="Thusara Senanayake">
+
+	<title>Dashboard - Students</title>
+	<link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="/assets/css/dashboard.css" rel="stylesheet" />
+
+	<script defer src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+	<script defer src="/assets/dist/js/feather.min.js"></script>
+	<script defer src="/assets/js/edit.js"></script>
+</head>
+
+<body>
+	<%- include ('../partials/header.ejs') %>
+	<div class="container-fluid">
+		<div class="row">
+			<%- include('../partials/sidebar.ejs') %>
+
+			<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+				<span id="homeIcon" data-feather="corner-down-left" onclick="window.history.back()"></span>
+
+				<form id="createStudentForm" class="row g-3 p-5" novalidate>
+					<div class="col-md-4">
+						<label for="indexNumber" class="form-label">Index number</label>
+						<div class="input-group ">
+							<span class="input-group-text">OMA-</span>
+							<input type="number" placeholder="00000 - 99999" class="form-control" name="indexNumber"
+								id="indexNumber" value="<%=student.indexNumber%>" min="0" max="99999" required />
+							<div class="invalid-feedback">
+								Please enter a valid index number.
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<label for="first_name" class="form-label">First name</label>
+						<input type="text" value="<%=student.firstName%>" maxlength="30" class="form-control"
+							name="firstName" id="first_name" required />
+						<div class="valid-feedback">Looks good!</div>
+						<div class="invalid-feedback">First name is required</div>
+					</div>
+
+					<div class="col-md-4">
+						<label for="last_name" class="form-label">Last name</label>
+						<input type="text" value="<%=student.lastName%>" maxlength="30" class="form-control"
+							name="lastName" id="last_name" />
+					</div>
+
+					<div class="col-md-4">
+						<label for="email" class="form-label">Email</label>
+						<input type="email" value="<%=student.email%>" class="form-control" id="email" name="email"
+							required />
+						<div class="valid-feedback">Looks good!</div>
+						<div class="invalid-feedback">Email is required</div>
+
+					</div>
+
+					<div class="col-md-4">
+						<label for="phone_number" class="form-label">Phone number</label>
+						<input type="tel" class="form-control" value="<%=student.phoneNumber%>" name="phoneNumber"
+							id="phone_number" maxlength="10" pattern="[0]{1}[0-9]{9}" required />
+						<div class="invalid-feedback">Phone number is required</div>
+						<div class="valid-feedback">Looks good!</div>
+
+					</div>
+
+
+					<div class="col-md-3">
+						<label for="course_id" class="form-label">Course</label>
+						<select class="form-select" name="courseId" id="course_id" required>
+							<% const availableCourses = ['Java Programming','English Foundation','AL ICT','Web Development'] %>
+
+							<% availableCourses.forEach(course => { %>
+							<% if(student.courseId === course){ %>
+							<option selected><%=student.courseId%></option>
+							<%} else{%>
+							<option><%=course%></option>
+							<%} %>
+							<% }) %>
+						</select>
+						<div class="invalid-feedback">Please select a valid course.</div>
+
+					</div>
+
+					<div class="col-12">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="invalidCheck3" required="" />
+							<label class="form-check-label" for="invalidCheck3">
+								Checked and confirmed
+							</label>
+							<div class="invalid-feedback">
+								Please review before submitting.
+							</div>
+						</div>
+					</div>
+					<div class="col-12">
+						<button class="btn btn-primary" type="submit">Submit form</button>
+					</div>
+				</form>
+			</main>
+		</div>
+	</div>
+</body>
+
+</html>
