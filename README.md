@@ -7,9 +7,9 @@
     <br />
     <a href="https://openmindacademy.herokuapp.com/">View Demo</a>
     ·
-    <a href="https://github.com/Thusara-Senanayake/openmind-academy-dashboard/issues">Report Bug</a>
+    <a href="https://github.com/thusarasenanayake/openmind-academy-dashboard/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Thusara-Senanayake/openmind-academy-dashboard/issues">Request Feature</a>
+    <a href="https://github.com/thusarasenanayake/openmind-academy-dashboard/issues">Request Feature</a>
   </p>
 </p>
 
@@ -40,7 +40,7 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 To get a local copy up and running, open your terminal in a favoured location and follow these simple example steps.
 
   ```sh
-  git clone https://github.com/Thusara-Senanayake/openmind-academy-dashboard.git openmind-academy-dashboard
+  git clone https://github.com/thusarasenanayake/openmind-academy-dashboard.git openmind-academy-dashboard
   cd openmind-academy-dashboard
   npm install 
   ```
@@ -61,7 +61,7 @@ Finally create an account using **http://localhost:3000/dashboard/signup** link 
 
 ## Roadmap
 
-See the [open issues](https://github.com/Thusara-Senanayake/openmind-academy-dashboard/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/thusarasenanayake/openmind-academy-dashboard/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 
@@ -85,7 +85,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Project Link: [OpenMind Academy Dashboard](https://github.com/Thusara-Senanayake/openmind-academy-dashboard)
+Project Link: [OpenMind Academy Dashboard](https://github.com/thusarasenanayake/openmind-academy-dashboard)
 
 <!-- ACKNOWLEDGEMENTS -->
 
