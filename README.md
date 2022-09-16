@@ -5,7 +5,7 @@
     A web based dashboard for management of students.
     <br />
     <br />
-    <a href="https://openmindacademy.herokuapp.com/">View Demo</a>
+    <a href="https://openmind-academy-dashboard.onrender.com">View Demo</a>
     ·
     <a href="https://github.com/thusarasenanayake/openmind-academy-dashboard/issues">Report Bug</a>
     ·
@@ -15,14 +15,14 @@
 
 ## About The Project
 
-This web application was primarily build with **Express**, **Mongo DB**, **Bootstrap** and featured with front-end validation, back-end validation, authentication and ect. Funtionality wise authorised users can add, view, update and delete students. To interact with the dashboard you must have logged in with a registered email and password. For the [demonstration](https://openmindacademy.herokuapp.com/ "see the demo") purposes I have added fake data and registered **guest@openmindacademy.com** with the password of **abc123123**
+This web application was primarily build with **Express**, **Mongo DB**, **Bootstrap** and featured with front-end validation, back-end validation, authentication and ect. Funtionality wise authorised users can add, view, update and delete students. To interact with the dashboard you must have logged in with a registered email and password. For the [demonstration](https://openmind-academy-dashboard.onrender.com "see the demo") purposes I have added fake data and registered **guest@openmindacademy.com** with the password of **abc123123**
 <br />
 
 
-[![a snapshot of the project][product-screenshot]](https://openmindacademy.herokuapp.com/)
-[![a snapshot of the project][product-screenshot2]](https://openmindacademy.herokuapp.com/)
-[![a snapshot of the project][product-screenshot3]](https://openmindacademy.herokuapp.com/)
-[![a snapshot of the project][product-screenshot4]](https://openmindacademy.herokuapp.com/)
+[![a snapshot of the project][product-screenshot]](https://openmind-academy-dashboard.onrender.com)
+[![a snapshot of the project][product-screenshot2]](https://openmind-academy-dashboard.onrender.com)
+[![a snapshot of the project][product-screenshot3]](https://openmind-academy-dashboard.onrender.com)
+[![a snapshot of the project][product-screenshot4]](https://openmind-academy-dashboard.onrender.com)
 
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
